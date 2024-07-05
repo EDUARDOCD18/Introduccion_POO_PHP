@@ -1,4 +1,7 @@
-<?php include 'includes/header.php';
+<?php
+
+declare(strict_types=1);
+include 'includes/header.php';
 
 /* -- Definir una clase -- */
 class Producto
@@ -6,26 +9,21 @@ class Producto
     public $nombre;
     public $precio;
     public $disponible;
+
+    // Constructor
+    public function __construct(String $nombre, int $precio, bool $disponible)
+    {
+        $this->nombre = $nombre;
+        $this->precio = $precio;
+        $this->disponible = $disponible;
+    }
 }
 
 
 /* -- Instanciar la clase -- */
-$producto = new Producto();
-$producto->nombre = "Tablet 7 pulgadas";
-$producto->precio = "$200";
-$producto->disponible = true;
-
+$producto = new Producto("Tablet", 40, false);
 echo "<pre>";
 var_dump($producto);
-echo "</pre>";
-
-$producto2 = new Producto();
-$producto2->nombre = "Tablet 10 pulgadas";
-$producto2->precio = "$400";
-$producto2->disponible = false;
-
-echo "<pre>";
-var_dump($producto2);
 echo "</pre>";
 
 
